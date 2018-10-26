@@ -1,0 +1,29 @@
+version: '3'
+
+services:
+    workspace:
+        image: pilot114/base-workspace72
+        volumes:
+            - "./:/var/www/gamers"
+        ports:
+            - "8080:8080"
+            - "8000:8000"
+        tty: true
+    nginx:
+        image: pilot114/base-nginx
+        volumes:
+            - "./gamers.conf:/etc/nginx/conf.d/default.conf"
+            - "./public:/var/www/gamers/public"
+        ports:
+            - "80:80"
+        environment:
+            - NGINX_HOST=gamers.local
+        command: ['nginx', '-g', 'daemon off;']
+        restart: always
+        depends_on:
+            - php
+    php:
+        image: pilot114/base-php-wshell
+        restart: always
+        volumes:
+            - "./:/var/www/gamers"

@@ -1,0 +1,19 @@
+{
+    "private": true,
+    "scripts": {
+        "dev": "npm run development",
+        "watch": "npm run development -- --watch",
+        "watch-poll": "npm run watch -- --watch-poll",
+        "prod": "npm run production"
+    },
+    "dependencies": {
+        "axios": "^0.18",
+        "bootstrap": "^4.0.0",
+        "bootstrap-sass": "^3.3.7",
+        "bootstrap-vue": "^2.0.0-rc.11",
+        "laravel-mix": "^2.0",
+        "lodash": "^4.17.5",
+        "vue": "^2.5.17",
+        "vue-router": "^3.0.1"
+    }
+}
