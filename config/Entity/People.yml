@@ -1,0 +1,15 @@
+Entity\People:
+  type: entity
+  table: people
+  id:
+    id:
+      type: integer
+      generator:
+        strategy: AUTO
+  fields:
+    created_at:
+      type: datetime
+    updated_at:
+      type: datetime
+    name:
+      type: string

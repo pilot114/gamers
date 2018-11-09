@@ -1,0 +1,24 @@
+Entity\Game:
+  type: entity
+  table: game
+  id:
+    id:
+      type: integer
+      generator:
+        strategy: AUTO
+  fields:
+    created_at:
+      type: datetime
+    updated_at:
+      type: datetime
+      nullable: true
+    name:
+      type: string
+    description:
+      type: string
+    logo:
+      type: string
+    release_date:
+      type: date
+    multiplayer:
+      type: boolean

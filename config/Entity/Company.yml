@@ -1,0 +1,17 @@
+Entity\Company:
+  type: entity
+  table: company
+  id:
+    id:
+      type: integer
+      generator:
+        strategy: AUTO
+  fields:
+    created_at:
+      type: datetime
+    updated_at:
+      type: datetime
+    name:
+      type: string
+    founded:
+      type: date

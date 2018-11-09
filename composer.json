@@ -8,12 +8,14 @@
         "php": "^7.2",
         "doctrine/migrations": "^1.8",
         "doctrine/orm": "^2.6",
+        "symfony/yaml": "2.*",
         "fzaninotto/faker": "^1.8",
         "symfony/http-foundation": "^4.1"
     },
     "autoload": {
         "psr-4": {
-            "App\\": "src/"
+            "App\\": "src/App",
+            "Entity\\": "src/Entity"
         }
     },
     "config": {
