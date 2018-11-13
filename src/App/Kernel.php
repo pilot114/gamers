@@ -6,6 +6,13 @@ use Doctrine\ORM\EntityManager;
 use Doctrine\ORM\Configuration;
 use Doctrine\ORM\Mapping\Driver\SimplifiedYamlDriver;
 
+/**
+ * Kernel - суперкласс, который отвечает за многое.
+ * Для небольшого проекта это хорошая отправная точка,
+ * но в какой-то момент его следует декомпозировать, т.к.
+ * такой подход является антипаттерном
+ * @package App
+ */
 class Kernel
 {
     const IS_DEV_MODE = true;
@@ -27,6 +34,7 @@ class Kernel
         $driverImpl = new SimplifiedYamlDriver([self::ROOT_PATH . "/config/Entity" => 'Entity'], '.yml');
         $config->setMetadataDriverImpl($driverImpl);
 
+        // настройка прокси классов
         $config->setProxyDir('tmp/proxy');
         $config->setProxyNamespace('Proxy');
         $config->setAutoGenerateProxyClasses(self::IS_DEV_MODE);
@@ -38,7 +46,7 @@ class Kernel
 
         $conn = [
             'driver' => 'pdo_sqlite',
-            'path' => __DIR__ . '/db.sqlite',
+            'path' => self::ROOT_PATH . '/db.sqlite',
         ];
 
         return EntityManager::create($conn, $config);

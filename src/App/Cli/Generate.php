@@ -20,6 +20,8 @@ class Generate
             'created_at' => function() use ($faker) { return $faker->dateTimeBetween('-5 year', '-1 year'); },
             'updated_at' => function() use ($faker) { return $faker->dateTimeBetween('-11 month', 'now'); },
         ]);
-        $populator->execute();
+        var_dump($populator);
+        die();
+//        $populator->execute();
     }
 }
