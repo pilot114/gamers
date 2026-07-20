@@ -7,7 +7,7 @@
         "prod": "npm run production"
     },
     "dependencies": {
-        "axios": "^0.32",
+        "axios": "^0.33",
         "bootstrap": "^5.0.0",
         "bootstrap-sass": "^3.4.1",
         "bootstrap-vue": "^2.0.0-rc.11",
